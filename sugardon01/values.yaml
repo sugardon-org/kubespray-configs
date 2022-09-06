@@ -1,0 +1,9 @@
+# k8s-cluster.yml
+kube_version: v1.23.7
+kubeconfig_localhost: true
+
+## cri
+container_manager: containerd
+
+## cni
+kube_network_plugin: cilium
