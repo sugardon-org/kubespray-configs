@@ -7,3 +7,9 @@ container_manager: containerd
 
 ## cni
 kube_network_plugin: cilium
+### cilium
+# https://github.com/kubernetes-sigs/kubespray/blob/c6814354325947c9ee99e326d15afcd14aad8eb9/docs/cilium.md#install-cilium-hubble
+# https://github.com/kubernetes-sigs/kubespray/blob/master/roles/network_plugin/cilium/defaults/main.yml
+cilium_enable_hubble: true
+cilium_hubble_install: true
+cilium_hubble_tls_generate: true
