@@ -16,7 +16,7 @@
 1. run
    ```bash
    cp ../sugardon01/hosts.ini inventory/sample/
-   ansible-playbook -i inventory/sample/hosts.ini cluster.yml -e "@../sugardon01/values.yaml" --become -vvv
+   ansible-playbook -i inventory/sample/hosts.ini cluster.yml -e "@../sugardon01/values.yaml" --skip-tags "kube-proxy" --become -vvv
    cp inventory/sample/artifacts/admin.conf ../sugardon01
    cd ../
    ```
