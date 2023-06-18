@@ -10,7 +10,7 @@ kube_network_plugin: cilium
 ### cilium
 # https://github.com/kubernetes-sigs/kubespray/blob/c6814354325947c9ee99e326d15afcd14aad8eb9/docs/cilium.md#install-cilium-hubble
 # https://github.com/kubernetes-sigs/kubespray/blob/master/roles/network_plugin/cilium/defaults/main.yml
-cilium_version: "v1.13.1"
+cilium_version: "v1.13.2"
 # use cilium kube-proxy
 # https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/#kubeproxy-free
 # Should disable kube-proxy at kubespray
@@ -23,36 +23,11 @@ cilium_hubble_tls_generate: true
 cilium_config_extra_vars:
   # BGP ControlPlane
   # https://docs.cilium.io/en/latest/network/bgp-control-plane/
-  # https://github.com/cilium/cilium/issues/24663
-  enable-bgp-control-plane: false # TODO: true
-  # BGP (Beta) - Temporary, instead of BGP ControlPlane
-  #
-  # Before remove
-  # $ cilium uninstall
-  bgp-announce-lb-ip: true # TODO: false
+  # Bug: https://github.com/cilium/cilium/issues/24663
+  enable-bgp-control-plane: true
 # https://docs.cilium.io/en/v1.13/cmdref/cilium-agent/
 cilium_agent_custom_args:
   # BGP ControlPlane
   # https://docs.cilium.io/en/latest/network/bgp-control-plane/
-  # https://github.com/cilium/cilium/issues/24663
-  - "--enable-bgp-control-plane=false" # TODO: true
-  # BGP (Beta) - Temporary, instead of BGP ControlPlane
-  #
-  # Before remove
-  # $ cilium uninstall
-  - "--bgp-announce-lb-ip=true" # TODO: false
-
-# For BGP (Beta)
-#
-# Before remove
-# $ cilium uninstall
-cilium_operator_extra_volume_mounts:
-  - mountPath: /var/lib/cilium/bgp
-    name: bgp-config
-cilium_operator_extra_volumes:
-  - configMap:
-      name: bgp-config
-    name: bgp-config
-cilium_agent_extra_volume_mounts:
-  - mountPath: /var/lib/cilium/bgp
-    name: bgp-config
+  # Bug: https://github.com/cilium/cilium/issues/24663
+  - "--enable-bgp-control-plane=true"
