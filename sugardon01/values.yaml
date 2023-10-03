@@ -2,6 +2,9 @@
 kube_version: v1.26.5
 kubeconfig_localhost: true
 
+kubelet_image_gc_high_threshold: 75
+kubelet_image_gc_low_threshold: 70
+
 ## cri
 container_manager: containerd
 
