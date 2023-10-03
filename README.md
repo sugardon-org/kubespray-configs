@@ -11,7 +11,7 @@
 1. kubespray
    ```bash
    cd kubespray
-   git checkout v2.20.0
+   git checkout v2.22.1
    ```
 1. run
    ```bash

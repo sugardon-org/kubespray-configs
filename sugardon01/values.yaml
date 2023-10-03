@@ -1,5 +1,5 @@
 # k8s-cluster.yml
-kube_version: v1.24.6
+kube_version: v1.26.5
 kubeconfig_localhost: true
 
 ## cri
@@ -10,7 +10,7 @@ kube_network_plugin: cilium
 ### cilium
 # https://github.com/kubernetes-sigs/kubespray/blob/c6814354325947c9ee99e326d15afcd14aad8eb9/docs/cilium.md#install-cilium-hubble
 # https://github.com/kubernetes-sigs/kubespray/blob/master/roles/network_plugin/cilium/defaults/main.yml
-cilium_version: "v1.13.2"
+cilium_version: "v1.13.4"
 # use cilium kube-proxy
 # https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/#kubeproxy-free
 # Should disable kube-proxy at kubespray
