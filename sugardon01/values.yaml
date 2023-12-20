@@ -1,6 +1,12 @@
 # k8s-cluster.yml
-kube_version: v1.26.5
+kube_version: v1.27.4
+# https://github.com/kubernetes-sigs/kubespray/blob/master/docs/upgrades.md#graceful-upgrade
+upgrade_cluster_setup: true
 kubeconfig_localhost: true
+
+# kube-apiserver
+# https://github.com/kubernetes-sigs/kubespray/blob/243ca5d08fa73a009760c6ce486e7d86c9481398/roles/kubespray-defaults/defaults/main/main.yml#L544
+apiserver_loadbalancer_domain_name: "kubeapi.sugardon.com"
 
 kubelet_image_gc_high_threshold: 75
 kubelet_image_gc_low_threshold: 70
