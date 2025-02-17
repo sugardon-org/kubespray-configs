@@ -1,8 +1,9 @@
 # k8s-cluster.yml
-kube_version: v1.27.4
+kube_version: v1.28.6
 # https://github.com/kubernetes-sigs/kubespray/blob/master/docs/upgrades.md#graceful-upgrade
 upgrade_cluster_setup: true
 kubeconfig_localhost: true
+auto_renew_certificates: true
 
 # kube-apiserver
 # https://github.com/kubernetes-sigs/kubespray/blob/243ca5d08fa73a009760c6ce486e7d86c9481398/roles/kubespray-defaults/defaults/main/main.yml#L544
